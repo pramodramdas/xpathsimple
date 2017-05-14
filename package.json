@@ -1,6 +1,6 @@
 {
   "name": "xpathsimple",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple way to search xpath in xpath tree",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,10 @@
   ],
   "author": "pramod",
   "license": "ISC",
+  "dependencies": {
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.3.0",
