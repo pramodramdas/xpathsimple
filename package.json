@@ -1,6 +1,6 @@
 {
   "name": "xpathsimple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple way to search xpath in xpath tree",
   "main": "index.js",
   "scripts": {

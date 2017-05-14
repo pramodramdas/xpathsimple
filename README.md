@@ -14,7 +14,7 @@ npm install xpathsimple
 ## usage
 
 	var xml = "<book author='john'><br/><title>Harry Potter<a>cold</a></title></book>"
-	var xp = require('./xpathsimple');
+	var xp = require('xpathsimple');
 	var obj = new xp(xml);
 
 	console.log(obj.search('title','tag'));
