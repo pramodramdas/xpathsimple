@@ -57,7 +57,7 @@ function getByTag(nodes,tag)
 
 	for( var key in Object.keys(node))
 	{	
-		if(node[key].tagName && node[key].tagName === tag)
+		if(node[key].tagName && node[key].tagName.toLowerCase() === tag.toLowerCase())
 		{	
 			result[result.length] = node[key].xpath;
 		}
@@ -74,7 +74,7 @@ function getByAttrTag(nodes,attrTag)
 
 	for( var key in Object.keys(node))
 	{	
-		if(node[key].attributes[attrTag])
+		if(node[key].attributes[attrTag.toLowerCase()])
 		{	
 			result[result.length] = node[key].xpath;
 		}
@@ -91,7 +91,7 @@ function getByData(nodes,data,parentXpath)
 
 	for( var key in Object.keys(node))
 	{	
-		if(node[key].data && node[key].data.indexOf(data) > -1)
+		if(node[key].data && node[key].data.toLowerCase().indexOf(data.toLowerCase()) > -1)
 		{	
 			result[result.length] = parentXpath;
 		}
@@ -110,7 +110,7 @@ function getByAttrValue(nodes,attrTagValue)
 	{	
 		for (let i in node[key].attributes)
 		{	
-			if(node[key].attributes[i] === attrTagValue)
+			if(node[key].attributes[i].toLowerCase() === attrTagValue.toLowerCase())
 				result[result.length] = node[key].xpath;
 		}
 		if(node[key].childNodes)
@@ -148,6 +148,7 @@ function extractXpath(nodes){
 				{
 					xjson.childNodes[i] = build(node.childNodes[i],xjson.xpath,xjson.tags);
 				}
+		if(node.attributes)
 			for(let k = 0; k<node.attributes.length;k++)
 			{
 				xjson.attributes[node.attributes[k].name] = node.attributes[k].value;
